@@ -1,0 +1,21 @@
+<div id="messages">
+  <% @links.each do |link| %>
+    <div class="">
+      <div class="name">
+        <%= link.name %>
+      </div>
+      <div class="talk">
+        <%= link.talk %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<form>
+  <input type="text" data-behavior="ac_link_speaker">
+</form>
+<%= form_tag talks_create_path, method: :post do %>
+  <%= text_field_tag(:name, class: "form-control") %>
+  <%= text_field_tag(:talk, class: "form-control") %>
+  <%= submit_tag "Search!", class: "btn btn-primary" %>
+<% end if true == false %>
